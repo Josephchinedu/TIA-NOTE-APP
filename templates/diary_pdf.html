@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
+
+    <h1 style="color: #dd3051; text-align: center;">{{ name }} Diary Note</h1>
+
+    <ul>
+        {% for note in notes %}
+            <li>
+                <h2>{{ note.title }}</h2>
+                <ul>
+                    <li>Content: {{ note.content }}</li>
+                    <li>Created Date: {{ note.created_at|date:"Y-m-d"}}</li>
+                    <li>Category: {{ note.category.name }}</li>
+                    <li>Priority: {{ note.priority }}</li>
+                    <li>Due Date: {{ note.due_date|date:"Y-m-d" }}</li>
+                    <li>Finished: {{ note.is_finished }}</li>
+                    <li>Due: {{ note.due }}</li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p style="text-align: center; color: #dd3051;">&copy; {{ current_year }}. {{ email }}</p>
+
+</body>
+</html>
