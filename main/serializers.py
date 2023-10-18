@@ -25,7 +25,7 @@ class DiaryNoteSerializer(serializers.ModelSerializer):
         category_data = data.pop("category")
 
         data["user"] = user_data
-        data["company"] = category_data
+        data["category"] = category_data
         return data
 
 

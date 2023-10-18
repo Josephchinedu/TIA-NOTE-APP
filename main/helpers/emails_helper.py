@@ -368,8 +368,6 @@ class EmailHandler:
         except FileNotFoundError:
             pass
 
-
-
     def send_reminder(self, first_name, year, reminder_message, note_title):
         """
         SEND REMINDER TO USER
@@ -478,7 +476,7 @@ class EmailHandler:
             data={
                 "from": "Tunga TIA <postmaster@getlinked.ai>",
                 "to": f"{self.email}",
-                "subject": "Account Reset",
+                "subject": "Reminder",
                 "html": html,
             },
         )

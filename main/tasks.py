@@ -153,6 +153,7 @@ def celery_thirty_minutes_reminder():
                 note_title=item.note.title,
                 year=TODAYS_DATE.year,
             )
+            break
 
 
 @shared_task
